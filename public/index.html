@@ -1,12 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div class="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="../src/assets/cineflex.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../src/css/styles.css">
+  <title>Cineflex</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="root">
+    <header class="header">Cineflex</header>
+    <main class="main">
+      <div class="movies hidden">
+        <h1 class="title">Selecione o filme</h1>
+        <ul class="movies-list-container">
+
+          <li class="movie-banner"></li>
+          <li class="movie-banner"></li>
+          <li class="movie-banner"></li>
+          <li class="movie-banner"></li>
+          <li class="movie-banner"></li>
+          <li class="movie-banner"></li>
+          <li class="movie-banner"></li>
+          <li class="movie-banner"></li>
+
+        </ul>
+      </div>
+
+      <div class="session hidden">
+        <h1 class="title">Selecione o horário</h1>
+
+        <ul class="movie-session-container">
+
+          <li class="movie-session">
+            <span class="date">Quinta-feira - 24/06/2021</span>
+            <div class="buttons">
+              <button class="button">15:00</button>
+              <button class="button">19:00</button>
+            </div>
+          </li>
+
+          <li class="movie-session">
+            <span class="date">Quinta-feira - 24/06/2021</span>
+            <div class="buttons">
+              <button class="button">15:00</button>
+              <button class="button">19:00</button>
+            </div>
+          </li>
+
+          <li class="movie-session">
+            <span class="date">Quinta-feira - 24/06/2021</span>
+            <div class="buttons">
+              <button class="button">15:00</button>
+              <button class="button">19:00</button>
+            </div>
+          </li>
+
+          <li class="movie-session">
+            <span class="date">Quinta-feira - 24/06/2021</span>
+            <div class="buttons">
+              <button class="button">15:00</button>
+              <button class="button">19:00</button>
+            </div>
+          </li>
+
+          <li class="movie-session">
+            <span class="date">Quinta-feira - 24/06/2021</span>
+            <div class="buttons">
+              <button class="button">15:00</button>
+              <button class="button">19:00</button>
+            </div>
+          </li>
+
+          <li class="movie-session">
+            <span class="date">Quinta-feira - 24/06/2021</span>
+            <div class="buttons">
+              <button class="button">15:00</button>
+              <button class="button">19:00</button>
+            </div>
+          </li>
+
+          <li class="movie-session">
+            <span class="date">Quinta-feira - 24/06/2021</span>
+            <div class="buttons">
+              <button class="button">15:00</button>
+              <button class="button">19:00</button>
+            </div>
+          </li>
+
+        </ul>
+
+        <footer class="footer">
+          <div class="image"></div>
+          <span class="title"> Enola Holmes</span>
+        </footer>
+      </div>
+
+      <div class="seats hidden">
+        <h1 class="title">Selecione o(s) assento(s)</h1>
+
+        <ul class="seats-container">
+
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+          <li class="seat available"></li>
+
+        </ul>
+
+        <div class="exemples">
+          <div class="exemple">
+            <div class="seat picked"></div>
+            <span class="status-text">Selecionado</span>
+          </div>
+          <div class="exemple">
+            <div class="seat available"></div>
+            <span class="status-text">Disponível</span>
+          </div>
+          <div class="exemple">
+            <div class="seat sold-out"></div>
+            <span class="status-text">Indisponível</span>
+          </div>
+        </div>
+
+        <div class="inputs">
+          <div class="input-container">
+            <span class="input-title">Nome do comprador:</span>
+            <input type="text" placeholder="Digite seu nome...">
+          </div>
+          <div class="input-container">
+            <span class="input-title">CPF do comprador:</span>
+            <input type="text" placeholder="Digite seu CPF...">
+          </div>
+        </div>
+
+
+        <button class="finish-button">
+          Reservar assento(s)
+        </button>
+
+
+        <footer class="footer">
+          <div class="image"></div>
+          <span class="title"> Enola Holmes</span>
+          <span class="title"> Quinta-feira - 15:00</span>
+        </footer>
+      </div>
+
+      <div class="success">
+
+        <h1 class="success-title">
+          Pedido feito <br>
+          com sucesso!
+        </h1>
+
+        <div class="success-data">
+          <h2 class="success-data-title">Filme e sessão</h2>
+          <p class="data-text">
+            Enola Holmes <br>
+            24/06/2021 15:00
+          </p>
+        </div>
+
+        <div class="success-data">
+          <h2 class="success-data-title">Ingressos</h2>
+          <p class="data-text">
+            Assento 15<br>
+            Assento 16
+          </p>
+
+        </div>
+
+        <div class="success-data">
+          <h2 class="success-data-title">Comprador</h2>
+          <p class="data-text">
+            Nome: João da Silva Sauro <br>
+            CPF: 123.456.789-10
+          </p>
+        </div>
+
+        <button class="finish-button">Voltar pra Home</button>
+
+      </div>
+
+
+    </main>
+  </div>
+</body>
+
 </html>
