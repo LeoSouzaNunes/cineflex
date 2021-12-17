@@ -1,9 +1,25 @@
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Session() {
 
+
     const { idFilme } = useParams();
-    console.log(idFilme)
+    const [sessionsData, setSessionsData] = useState(null);
+
+    useEffect(() => {
+        const promiseSessionsData = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${idFilme}/showtimes`);
+
+        promiseSessionsData.then((request) => setSessionsData(request.data));
+    }, [idFilme])
+
+    console.log(sessionsData);
+
+    if (sessionsData === null) {
+        return <></>
+    }
 
     return (
 
@@ -12,67 +28,28 @@ export default function Session() {
 
             <ul className="movie-session-container">
 
-                <li className="movie-session">
-                    <span className="date">Quinta-feira - 24/06/2021</span>
-                    <div className="buttons">
-                        <button className="button">15:00</button>
-                        <button className="button">19:00</button>
-                    </div>
-                </li>
+                {sessionsData.days.map((session) => (
+                    <li key={session.id} className="movie-session">
+                        <span className="date">{session.weekday} - {session.date}</span>
+                        <div className="buttons">
 
-                <li className="movie-session">
-                    <span className="date">Quinta-feira - 24/06/2021</span>
-                    <div className="buttons">
-                        <button className="button">15:00</button>
-                        <button className="button">19:00</button>
-                    </div>
-                </li>
+                            {session.showtimes.map((time) => (
+                                <Link key={time.id} to={`/assentos/${time.id}`}>
+                                    <button className="button">{time.name}</button>
+                                </Link>
+                            ))
+                            }
+                        </div>
+                    </li>
+                ))
+                }
 
-                <li className="movie-session">
-                    <span className="date">Quinta-feira - 24/06/2021</span>
-                    <div className="buttons">
-                        <button className="button">15:00</button>
-                        <button className="button">19:00</button>
-                    </div>
-                </li>
-
-                <li className="movie-session">
-                    <span className="date">Quinta-feira - 24/06/2021</span>
-                    <div className="buttons">
-                        <button className="button">15:00</button>
-                        <button className="button">19:00</button>
-                    </div>
-                </li>
-
-                <li className="movie-session">
-                    <span className="date">Quinta-feira - 24/06/2021</span>
-                    <div className="buttons">
-                        <button className="button">15:00</button>
-                        <button className="button">19:00</button>
-                    </div>
-                </li>
-
-                <li className="movie-session">
-                    <span className="date">Quinta-feira - 24/06/2021</span>
-                    <div className="buttons">
-                        <button className="button">15:00</button>
-                        <button className="button">19:00</button>
-                    </div>
-                </li>
-
-                <li className="movie-session">
-                    <span className="date">Quinta-feira - 24/06/2021</span>
-                    <div className="buttons">
-                        <button className="button">15:00</button>
-                        <button className="button">19:00</button>
-                    </div>
-                </li>
 
             </ul>
 
             <footer className="footer">
-                <div className="image"></div>
-                <span className="title"> Enola Holmes</span>
+                <div className="div-image"><img src={sessionsData.posterURL} alt={sessionsData.title} /></div>
+                <span className="title">{sessionsData.title}</span>
             </footer>
         </div>
 
