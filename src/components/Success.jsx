@@ -1,5 +1,6 @@
-export default function Success() {
+import { Link } from "react-router-dom"
 
+export default function Success({ successData }) {
 
     return (
         <div className="success">
@@ -12,29 +13,35 @@ export default function Success() {
             <div className="success-data">
                 <h2 className="success-data-title">Filme e sessão</h2>
                 <p className="data-text">
-                    Enola Holmes <br />
-                    24/06/2021 15:00
+                    {successData.movie} <br />
+                    {successData.date} {successData.time}
                 </p>
             </div>
 
             <div className="success-data">
                 <h2 className="success-data-title">Ingressos</h2>
-                <p className="data-text">
-                    Assento 15<br />
-                    Assento 16
-                </p>
+
+                {successData.seats.map((seat, index) => (
+                    <p key={index} className="data-text">
+                        Assento {seat}<br />
+                    </p>
+                ))
+                }
+
 
             </div>
 
             <div className="success-data">
                 <h2 className="success-data-title">Comprador</h2>
                 <p className="data-text">
-                    Nome: João da Silva Sauro <br />
-                    CPF: 123.456.789-10
+                    Nome: {successData.name} <br />
+                    CPF: {successData.id}
                 </p>
             </div>
 
-            <button className="finish-button">Voltar pra Home</button>
+            <Link to='/'>
+                <button className="finish-button">Voltar pra Home</button>
+            </Link>
 
         </div>
 

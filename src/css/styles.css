@@ -20,6 +20,10 @@ a{
  text-decoration: none;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .header{
     display: flex;
     justify-content: center;
@@ -200,8 +204,25 @@ a{
 .seat{
     width: 25px;
     height: 25px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 0.04em;
 
+    list-style-type: none;
+    
+    color: #000000;
+    
     border-radius:50%;
+}
+
+.seat:hover{
+    cursor: pointer;
 }
 
 .exemples{
@@ -257,6 +278,13 @@ a{
     border-radius: 3px;
 }
 
+.seats-footer-data{
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
 .finish-button{
     width: 225px;
     height: 42px;
@@ -279,10 +307,6 @@ a{
 
     color: #293845;
 }
-.sold-out{
-    background-color: #FBE192;
-    border: 1px solid #F7C52B;
-}
 
 .available{
     background-color: #C3CFD9;
@@ -294,6 +318,10 @@ a{
     border: 1px solid #1AAE9E;
 }
 
+.sold-out{
+    background-color: #FBE192;
+    border: 1px solid #F7C52B;
+}
 .success{
     margin-bottom: 0;
     height: auto;
