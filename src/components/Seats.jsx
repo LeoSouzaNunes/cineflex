@@ -8,8 +8,8 @@ export default function Seats({ setSuccessData }) {
     const [seatsData, setSeatsData] = useState(null)
     const [username, setUsername] = useState('')
     const [idUser, setIdUser] = useState('')
-    const [seatColorId, setSeatColorId] = useState(0)
-    const [pickedSeats, setPickedSeats] = useState([])
+    const [pickedSeatsNumbers, setPickedSeatsNumbers] = useState([])
+    const [pickedSeatsIds, setPickedSeatsIds] = useState([])
 
     useEffect(() => {
         const promiseSeatsData = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/showtimes/${idSessao}/seats`)
@@ -21,20 +21,30 @@ export default function Seats({ setSuccessData }) {
     function handleSeat(e, seatId) {
         const status = e.target
 
-        if (status.classList.length >= 3) {
-            setSeatColorId('')
-        } else {
-            setSeatColorId(e.target.innerHTML)
-            setPickedSeats([seatId])
+        if (status.classList[1] === 'sold-out') {
+            alert("Esse assento não está disponível")
+
+        } else if (status.classList[2] === 'picked') {
+
+            status.classList.remove('picked')
+            setPickedSeatsIds(pickedSeatsIds.filter((id) => { return seatId !== id }))
+            setPickedSeatsNumbers(pickedSeatsNumbers.filter((number) => { return status.innerHTML !== number }))
+
+        } else if (status.classList[2] === undefined) {
+            status.classList.add('picked')
+            setPickedSeatsIds([...pickedSeatsIds, seatId])
+            setPickedSeatsNumbers([...pickedSeatsNumbers, status.innerHTML])
         }
+
     }
 
     function handleBuyButton() {
+
         const successValue = {
             movie: seatsData.movie.title,
             date: seatsData.day.date,
             time: seatsData.name,
-            seats: [seatColorId],
+            seats: pickedSeatsNumbers.sort((a, b) => { return a - b }),
             name: username,
             id: idUser
         }
@@ -43,7 +53,7 @@ export default function Seats({ setSuccessData }) {
 
             let postData =
             {
-                ids: pickedSeats,
+                ids: pickedSeatsIds,
                 name: username,
                 cpf: idUser
             };
@@ -74,7 +84,7 @@ export default function Seats({ setSuccessData }) {
                         className={
                             `seat 
                         ${seat.isAvailable ? ("available") : ("sold-out")} 
-                        ${seatColorId === seat.name ? ("picked") : ("")}`
+                        `
                         }>
                         {seat.name}
                     </li>
