@@ -1,71 +1,54 @@
-# Getting Started with Create React App
+## Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a movie tickets online booking where you can 
+find the session and seats that best fits you.
 
-## Available Scripts
+<span>
+  <img src="https://user-images.githubusercontent.com/93560377/149567414-c14ab0db-288c-4362-991c-8eeee047925f.png" width="200px"/>
+  <img src="https://user-images.githubusercontent.com/93560377/149567514-8f63402c-9e7e-4825-9f3d-2bfb0828b1ff.png" width="200px"/>
+  <img src="https://user-images.githubusercontent.com/93560377/149567560-6532ec40-40ae-4624-a0fc-fa190a072128.png" width="200px"/>
+  <img src="https://user-images.githubusercontent.com/93560377/149567733-0e569d97-fe40-47ae-b157-f3ac938ac8c4.png" width="200px"/>
+<span/>
+  
+Here you can check it out the application on your device
+[Demo](https://cineflex-react-app.vercel.app/).
 
-In the project directory, you can run:
+## About
 
-### `npm start`
+The following features are availabe: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Select an available movie.
+* Choose a time for you session.
+* Select as many available seats as you want.
+* Submit your purchase.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The main idea was to set the route flow using the react-router
+library and explore react resources. There is some possible
+future ideas to make a better user experience such as a comeback button
+and multiple customer data at the seats session.
 
-### `npm test`
+## Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/>
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/>
+<img src="https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=informational"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 
-### `npm run build`
+## How to run
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# projeto_09_cineflex_react
+1. Clone this repository
+2. Install dependencies
+```bash
+npm i
+```
+3.  Run the application with
+```bash
+npm run start
+```
+4.  You can optionally build the project running
+```bash
+npm run build
+```
+5. It's done! Preview the website on http://localhost:3000.
