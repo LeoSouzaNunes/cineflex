@@ -15,7 +15,7 @@ Here you can check it out the application on your device
 
 ## About
 
-The following features are availabe: 
+The following features are available: 
 
 * Select an available movie.
 * Choose a time for you session.
